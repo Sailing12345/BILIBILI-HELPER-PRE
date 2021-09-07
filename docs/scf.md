@@ -43,7 +43,7 @@
 
 **内存：** 建议不低于128MB
 
-**执行超时时间：** 建议不低于200s
+**执行超时时间：** 建议不低于200s，如果调整了`taskIntervalTime`,建议按照`taskIntervalTime`的17倍填写。
 
 环境变量：
 
@@ -52,12 +52,17 @@
 | `scfFlag`  |`true` |
 | `config`  | `参照样例` |
 
+**如果不知道自己的UA之类数据，以及看不懂每个值的含义，可以采用配置生成网页生成自己的配置**
+
+**[点击进入配置自动生成页面](https://utils.misec.top/index)**
+
 **config value样例**
 
 **dedeuserid sessdata biliJct 必填 获取方式见项目README**
 
 ```json
 {
+  "taskIntervalTime": 10,
   "numberOfCoins": 5,
   "reserveCoins": 50,
   "selectLike": 0,
@@ -78,10 +83,58 @@
 }
 ```
 
-样例1:使用TGbot推送,如果不使用tgbot请将`telegrambottoken`和`telegramchatid`的值改为null。
+样例1:使用TGbot推送,如果不使用tgbot请将`telegrambottoken`和`telegramchatid`的值改为`null`。
 
 ```json
 {
+  "numberOfCoins": 5,
+  "reserveCoins": 50,
+  "selectLike": 0,
+  "monthEndAutoCharge": true,
+  "giveGift": true,
+  "upLive": "0",
+  "chargeForLove": "0",
+  "devicePlatform": "ios",
+  "coinAddPriority": 1,
+  "skipDailyTask": false,
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15",
+  "dedeuserid": "",
+  "sessdata": "",
+  "biliJct": "",
+  "telegrambottoken": "0000000:aaaaaaaa",
+  "telegramchatid": "123456",
+  "serverpushkey": null
+}
+```
+样例2:使用SERVER酱的配置：
+
+```json
+{
+  "taskIntervalTime": 10,
+  "numberOfCoins": 5,
+  "reserveCoins": 50,
+  "selectLike": 0,
+  "monthEndAutoCharge": true,
+  "giveGift": true,
+  "upLive": "0",
+  "chargeForLove": "0",
+  "devicePlatform": "ios",
+  "coinAddPriority": 1,
+  "skipDailyTask": false,
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15",
+  "dedeuserid": "",
+  "sessdata": "",
+  "biliJct": "",
+  "telegrambottoken": null,
+  "telegramchatid": null,
+  "serverpushkey": "申请的server酱的KEY"
+}
+```
+
+样例3:使用钉钉推送。
+```json
+{
+  "taskIntervalTime": 10,
   "numberOfCoins": 5,
   "reserveCoins": 50,
   "selectLike": 0,
@@ -100,34 +153,6 @@
   "telegramchatid": null,
   "serverpushkey": "https://oapi.dingtalk.com/robot/send?access_token=XXX"
 }
-```
-样例2:使用SERVER酱的配置：
-
-```json
-{
-  "numberOfCoins": 5,
-  "reserveCoins": 50,
-  "selectLike": 0,
-  "monthEndAutoCharge": true,
-  "giveGift": true,
-  "upLive": "0",
-  "chargeForLove": "0",
-  "devicePlatform": "ios",
-  "coinAddPriority": 1,
-  "skipDailyTask": false,
-  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15",
-  "dedeuserid": "",
-  "sessdata": "",
-  "biliJct": "",
-  "telegrambottoken": null,
-  "telegramchatid": null,
-  "serverpushkey": "申请的KEY"
-}
-```
-样例3:用于测试的事件模版
-
-```json
-
 ```
 
 ### 触发器配置

@@ -6,7 +6,7 @@
 
     <groupId>top.misec</groupId>
     <artifactId>BILIBILI-HELPER</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.5</version>
     <properties>
         <skipTests>true</skipTests>
         <mainClass>top.misec.BiliMain</mainClass>
@@ -21,6 +21,7 @@
                 <configuration>
                     <source>8</source>
                     <target>8</target>
+
                 </configuration>
             </plugin>
             <plugin>
@@ -67,7 +68,7 @@
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
-            <version>4.5.12</version>
+            <version>4.5.13</version>
             <exclusions>
                 <exclusion>
                     <artifactId>commons-logging</artifactId>
@@ -119,6 +120,11 @@
             <version>2.13.3</version>
         </dependency>
 
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.7.7</version>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>
@@ -133,6 +139,16 @@
             <artifactId>lombok</artifactId>
             <version>1.18.16</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.11</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>30.1.1-jre</version>
         </dependency>
 
     </dependencies>
